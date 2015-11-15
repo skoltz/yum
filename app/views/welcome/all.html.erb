@@ -1,0 +1,14 @@
+THIS IS A LIST OF ALL THE PICTURES
+
+<br>
+<br>
+<br>
+
+<%@pic.each do |pics|%>
+<%= pics.name %>
+
+<br>
+<br>
+
+<%= image_tag pics.image.url(:medium) %>
+<%end%>
