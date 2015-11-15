@@ -6,7 +6,6 @@ class WelcomeController < ApplicationController
 	end
 
 	def all
-		binding.pry
 		@pic = Picture.all
 		render('all')
 	end
