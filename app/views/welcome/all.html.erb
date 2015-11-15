@@ -11,4 +11,21 @@ THIS IS A LIST OF ALL THE PICTURES
 <br>
 
 <%= image_tag pics.image.url(:medium) %>
+
+<br>
+<br>
+<br>
+
+<% end %>
+
+<br>
+<br>
+<br>
+
+<%= form_tag("/", method: "get") do %>
+  <%= submit_tag("home page") %>
 <%end%>
+
+<h1>New Picture</h1>
+
+<%= render 'form' %>

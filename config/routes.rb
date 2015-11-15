@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root to: 'welcome#welcome'
   get 'welcome/all' => 'welcome#all'
   post 'welcome/all' => 'welcome#all'
+  get 'welcome/welcome' => 'welcome#welcome'
+  post 'welcome/welcome' => 'welcome#welcome'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
