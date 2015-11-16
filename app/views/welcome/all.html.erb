@@ -5,9 +5,13 @@ THIS IS A LIST OF ALL THE PICTURES
 <br>
 
 <%@pic.each do |pics|%>
-<%= pics.name %>
+Food: <%= pics.name %>
+
 
 <br>
+Restaurant: <%= pics.restaurant %>
+hello
+Address: <%= pics.address %>
 <br>
 
 <%= image_tag pics.image.url(:medium) %>

@@ -15,36 +15,14 @@ ActiveRecord::Schema.define(version: 20151115211228) do
 
   create_table "pictures", force: :cascade do |t|
     t.string   "name"
+    t.string   "restaurant"
+    t.string   "address"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-  end
-
-  create_table "restaurants", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "street_number"
-    t.string   "street_name"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  create_table "types", force: :cascade do |t|
-    t.string   "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.string   "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

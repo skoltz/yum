@@ -3,3 +3,7 @@
 <%= render 'form' %>
 
 <%= link_to 'Back', pictures_path %>
+
+<%= form_tag("/", method: "get") do %>
+  <%= submit_tag("home page") %>
+<%end%>
