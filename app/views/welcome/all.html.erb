@@ -1,3 +1,19 @@
+This is for filtering
+
+<% name_array = [] %>
+
+<%@pic.each do |pics|%>
+
+<% name_array << pics.name %>
+<%end%>
+
+<%name_array.uniq.each do |name|%>
+<div class='filter' id="<%=name%>"> <%=name%> <br> </div>
+<%end%>
+<div class="nofilter"> show/hide </div>
+<div class="filter clear"> clear </div>
+
+
 THIS IS A LIST OF ALL THE PICTURES
 <br>
 <%= image_tag("eatwitheyes_yellow.png", :style => "height: 320px") %> 
@@ -58,7 +74,8 @@ Address: <%= pics.address %>
         <% z = [1, 2] %>
         <%@pic.each_slice(3) do |pics| %>
             <%pics.each do |p| %>
-            <li class="gridster-cell" data-row="<%=k+1%>" data-col="<%=i%>" data-sizex="<%=z.sample%>" data-sizey="<%=z.sample%>" style="background: url(<%=p.image.url(:medium)%>) center no-repeat; background-size: cover;"></li>
+
+            <li class="gridster-cell <%=p.name%>" data-row="<%=k+1%>" data-col="<%=i%>" data-sizex="<%=z.sample%>" data-sizey="<%=z.sample%>" style="background: url(<%=p.image.url(:medium)%>) center no-repeat; background-size: cover;"></li>
             <% i+=1 %>
             <% end %>
         <% i = 1 %>
@@ -94,4 +111,32 @@ Address: <%= pics.address %>
         <li class="gridster-cell" data-row="2" data-col="6" data-sizex="1" data-sizey="2">Block12</li>
     </ul>
 </div>
+
+<script>
+    $('.filter').click(function(){
+        var imageClass = this.id
+        // debugger
+        if ($('.'+imageClass).is(":visible")){
+            $('.'+imageClass).hide()
+        } else {
+            $('.'+imageClass).show()
+        }
+    });
+
+    $('.nofilter').click(function(){
+        if ($('.filter').is(":visible")){
+            $('.filter').hide()
+        } else {
+            $('.filter').show()
+        }
+    });
+
+    $('.clear').click(function(){
+        debugger
+    });
+
+
+
+
+</script>
 
