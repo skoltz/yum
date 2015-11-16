@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
+//= require jquery.gridster.min.js
 //= require jquery_ujs
+//= require jquery
+//= require materialize-sprockets
 //= require turbolinks
 //= require_tree .
