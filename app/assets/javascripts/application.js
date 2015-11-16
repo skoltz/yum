@@ -15,6 +15,6 @@
 //= require jquery.gridster.min.js
 //= require jquery_ujs
 //= require jquery
-//= require materialize-sprockets
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
