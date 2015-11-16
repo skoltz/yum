@@ -2,10 +2,14 @@
 
 
 <%= @picture.name %>
-<%= image_tag @picture.image.url %>
+<%= @picture.restaurant %>
+<%= @picture.address %>
 <%= image_tag @picture.image.url(:medium) %>
-<%= image_tag @picture.image.url(:thumb) %>
 
 
 <%= link_to 'Edit', edit_picture_path(@picture) %> |
 <%= link_to 'Back', pictures_path %>
+
+<%= form_tag("/", method: "get") do %>
+  <%= submit_tag("home page") %>
+<%end%>

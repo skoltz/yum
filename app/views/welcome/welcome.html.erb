@@ -4,8 +4,9 @@ Hey This is welcome page
 THIS IS  A Link to all of the pictures
 
 <%= form_tag("welcome/all", method: "post") do %>
-  <%= submit_tag("all") %>
+  <%= submit_tag("nyc", :id=> "nycImage" )%>
 <% end %>
+
 
 
 <br>
@@ -15,5 +16,7 @@ THIS IS  A Link to all of the pictures
 <h1>New Picture</h1>
 
 <%= render 'form' %>
+
+
 
 

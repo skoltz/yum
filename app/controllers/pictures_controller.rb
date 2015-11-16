@@ -24,7 +24,11 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.json
   def create
+    
     @picture = Picture.new(picture_params)
+    @picture.restaurant = params['picture']['restaurant']
+    @picture.address = params['picture']['address']
+    
 
     respond_to do |format|
       if @picture.save
