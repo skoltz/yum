@@ -1,3 +1,5 @@
+
+
 THIS IS A LIST OF ALL THE PICTURES
 
 <br>
@@ -5,21 +7,26 @@ THIS IS A LIST OF ALL THE PICTURES
 <br>
 
 <%@pic.each do |pics|%>
-Food: <%= pics.name %>
+	<div class="grid-stack">
+		<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2">
+				<div class="grid-stack-item-content">	
+					Food: <%= pics.name %>
 
 
-<br>
-Restaurant: <%= pics.restaurant %>
-hello
-Address: <%= pics.address %>
-<br>
+					<br>
+					Restaurant: <%= pics.restaurant %>
+					hello
+					Address: <%= pics.address %>
+					<br>
 
-<%= image_tag pics.image.url(:medium) %>
+					<%= image_tag pics.image.url(:medium) %>
 
-<br>
-<br>
-<br>
-
+					<br>
+					<br>
+					<br>
+				</div>
+		</div>
+	</div>			
 <% end %>
 
 <br>
@@ -33,3 +40,36 @@ Address: <%= pics.address %>
 <h1>New Picture</h1>
 
 <%= render 'form' %>
+
+<br>
+<br>
+
+<div class="grid-stack" data-gs-width="12">
+	<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
+	<div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="4" data-gs-height="4"><div class="grid-stack-item-content"></div></div>
+	<div class="grid-stack-item" data-gs-x="8" data-gs-y="0" data-gs-width="2" data-gs-height="2" data-gs-min-width="2" data-gs-no-resize="yes"><div class="grid-stack-item-content"> <span class="fa fa-hand-o-up"></span> Drag me! </div></div>
+	<div class="grid-stack-item" data-gs-x="10" data-gs-y="0" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
+	<div class="grid-stack-item" data-gs-x="0" data-gs-y="4" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
+	<div class="grid-stack-item" data-gs-x="2" data-gs-y="4" data-gs-width="2" data-gs-height="4"><div class="grid-stack-item-content"></div></div>
+	<div class="grid-stack-item" data-gs-x="8" data-gs-y="4" data-gs-width="4" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
+	<div class="grid-stack-item" data-gs-x="0" data-gs-y="6" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
+	<div class="grid-stack-item" data-gs-x="4" data-gs-y="6" data-gs-width="4" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
+	<div class="grid-stack-item" data-gs-x="8" data-gs-y="6" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
+	<div class="grid-stack-item" data-gs-x="10" data-gs-y="6" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
+</div>
+<script type="text/javascript">
+$(function () {
+    $('.grid-stack').gridstack({
+	width: 12
+    });
+});
+</script>
+<script type="text/javascript">
+$(function () {
+    var options = {
+        cell_height: 80,
+        vertical_margin: 10
+    };
+    $('.grid-stack').gridstack(options);
+});
+</script>
