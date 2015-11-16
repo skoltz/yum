@@ -2,15 +2,15 @@ THIS IS A LIST OF ALL THE PICTURES
 <br>
 <%= image_tag("eatwitheyes_yellow.png", :style => "height: 320px") %> 
 <br>
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col s4">
 			<h2> oh hey </h2>
 		</div>	
-		<div class="col-md-4">
+		<div class="col s4">
 			<h2> oh hey </h2>
 		</div>			
-		<div class="col-md-4">
+		<div class="col s4">
 			<h2> oh hey </h2>
 		</div>	
 	</div>
@@ -53,20 +53,27 @@ Address: <%= pics.address %>
 <br>
 <div class="gridster">
     <ul>
-        <% i = 0 %> 
+        <% i = 1 %> 
+        <% k = 0 %>
+        <% z = [1, 2] %>
         <%@pic.each_slice(3) do |pics| %>
-            <% i+=1 %>
             <%pics.each do |p| %>
-            <li class="gridster-cell" data-row=<%"#{i}"%> data-col=<%"#{i}"%> data-sizex="1" data-sizey="1"><%= image_tag p.image.url(:medium) %></li>
-
-            <%end%>
-        <%end%>     
+            <li class="gridster-cell" data-row="<%=k+1%>" data-col="<%=i%>" data-sizex="<%=z.sample%>" data-sizey="<%=z.sample%>" style="background: url(<%=p.image.url(:medium)%>) center no-repeat; background-size: cover;"></li>
+            <% i+=1 %>
+            <% end %>
+        <% i = 1 %>
+        <% k+=1 %>
+        <% end %>     
     </ul>
 </div>
 <br>
 <br>
 <br>
-<!-- 
+<br>
+<br>
+<br>
+
+
 <div class="gridster">
     <ul>
         <li class="gridster-cell" data-row="1" data-col="1" data-sizex="1" data-sizey="1" resize.enabled:true>Block1</li>
@@ -86,5 +93,5 @@ Address: <%= pics.address %>
         <li class="gridster-cell" data-row="1" data-col="6" data-sizex="1" data-sizey="1">Block11</li>
         <li class="gridster-cell" data-row="2" data-col="6" data-sizex="1" data-sizey="2">Block12</li>
     </ul>
-</div> -->
+</div>
 
