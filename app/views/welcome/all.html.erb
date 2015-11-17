@@ -7,11 +7,19 @@ This is for filtering
 <% name_array << pics.name %>
 <%end%>
 
+<table>
+<tr>
 <%name_array.uniq.each do |name|%>
-<div class='filter' id="<%=name%>"> <%=name%> <br> </div>
+
+<td><p class='filter' id="<%=name%>"><%=name%></p></td>
+
 <%end%>
-<div class="nofilter"> show/hide </div>
-<div class="filter clear"> clear </div>
+<td><p class='reset'> clear </p></td>
+<td><p class="nofilter"> show/hide</p></td>
+</tr>
+</table>
+
+
 
 
 THIS IS A LIST OF ALL THE PICTURES
@@ -114,23 +122,25 @@ Address: <%= pics.address %>
 <script>
     $('.filter').click(function(){
         var imageClass = this.id
-        if ($('.'+imageClass).is(":visible")){
-            $('.'+imageClass).hide()
-        } else {
+            $('.gridster-cell').hide()
             $('.'+imageClass).show()
-        }
     });
 
     $('.nofilter').click(function(){
         if ($('.filter').is(":visible")){
             $('.filter').hide()
+            $('.reset').hide()
+
         } else {
             $('.filter').show()
+            $('.reset').show()
         }
     });
 
-    $('.clear').click(function(){
-    });
+    $('.reset').click(function(){
+        $('.gridster-cell').show()
+    })
+
 
 
 
