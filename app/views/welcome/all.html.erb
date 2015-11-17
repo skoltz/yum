@@ -82,7 +82,13 @@ Address: <%= pics.address %>
         <%@pic.each_slice(3) do |pics| %>
             <%pics.each do |p| %>
 
-            <li class="gridster-cell <%=p.name%>" data-row="<%=k+1%>" data-col="<%=i%>" data-sizex="<%=z.sample%>" data-sizey="<%=z.sample%>" style="background: url(<%=p.image.url(:medium)%>) center no-repeat; background-size: cover;"></li>
+            <li class="gridster-cell <%=p.name%>" data-row="<%=k+1%>" data-col="<%=i%>" data-sizex="<%=z.sample%>" data-sizey="<%=z.sample%>" style="background: url(<%=p.image.url(:medium)%>) center no-repeat; background-size: cover;"> <p class='info'>info</p>
+                <div id='<%=p.id%>'style="display:none">
+                    <p><%=p.restaurant%></p>
+                    <p><%=p.address%></p>
+                </div>
+            </li>
+
             <% i+=1 %>
             <% end %>
         <% i = 1 %>
@@ -139,6 +145,16 @@ Address: <%= pics.address %>
 
     $('.reset').click(function(){
         $('.gridster-cell').show()
+    })
+
+    $('.info').click(function(){
+        
+        var name = $(this).siblings('div').children('p')[0].innerHTML
+        var address =  $(this).siblings('div').children('p')[1].innerHTML
+        
+        name += "\n "+address
+       
+        alert(name)
     })
 
 
