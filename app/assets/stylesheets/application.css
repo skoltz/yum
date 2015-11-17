@@ -25,3 +25,12 @@
 #in {
   display: inline-block;
 }
+
+#outterbutton {
+  width: 100%;
+  text-align: center;
+}
+
+#innerbutton {
+  display: inline-block;
+}

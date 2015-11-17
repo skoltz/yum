@@ -9,7 +9,7 @@
             </div>
         </div>            
         <div class="col s4">
-            <div class="fixed-action-btn horizontal" style="top: 25px; right: 24px;">
+            <div class="fixed-action-btn horizontal" style="top: 25px; right: 24px;height: 50px;">
                 <a class="btn-floating btn-large red">
                   <i class="large material-icons">?</i>
                 </a>
@@ -50,20 +50,29 @@
 </div>
 <br>
 <br>
+<div id='outterbutton'>
+    <div id='innerbutton'>
+        <div style="background-color:#ffd000">
+             <a class="btn-floating btn-large waves-effect waves-light red" style="float:right; margin-right:26px"><i class="material-icons formicon">+</i></a>
+        </div>
+    </div>
+</div>
 <br>
 <br>
 <br>
 <br>
 
 <div id='out'>
+
     <div id='in'>
+
         <%= render 'form' %>
     </div>
 </div>
 
 
 <br> 
-This is for filtering
+
 
 <% name_array = [] %>
 
@@ -86,9 +95,7 @@ This is for filtering
 
 <br>
 
-<div style="background-color:#ffd000">
-    <a class="btn-floating btn-large waves-effect waves-light red" style="float:right; margin-right:26px"><i class="material-icons formicon">+</i></a>
-</div>
+
 </div>
 </div>
 <script>
@@ -122,6 +129,7 @@ This is for filtering
        
         alert(name)
     })
+    $('#in').hide()
 
     $('.formicon').click(function(){
         $('#in').toggle()
@@ -129,22 +137,6 @@ This is for filtering
 
     $('#additional').hide()
 
-    $('.info').mouseover(function(){
-        var name = $(this).siblings('div').children('p')[0].innerHTML
-        var address =  $(this).siblings('div').children('p')[1].innerHTML
-        name += "\n "+address
-        
-        $('#additional').slideDown(function(){
-           $('#additional').append(name) 
-        })
-
-        .mouseout(function(){
-            $('#additional').hide()
-            $('#additional').empty()
-
-        }) 
-
-    })
 
 
 
