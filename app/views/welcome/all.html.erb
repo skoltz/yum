@@ -11,7 +11,11 @@
           <li><a class="btn-floating reset" style="background-color:#df5496"><i class="material-icons">X</i></a></li>          
         </ul>
     </div>
-<a href="/"><img src="../assets/eatwitheyes_y.png" style="height:110px; margin-left:18px;"></a>        
+<a href="/"><img src="../assets/eatwitheyes_y.png" style="height:110px; margin-left:18px;"></a>   
+
+<div id='additional'>
+
+</div>     
 
 <div class="gridster">
     <ul>
@@ -42,9 +46,11 @@
 <br>
 <br>
 
-
-<%= render 'form' %>
-
+<div id='out'>
+    <div id='in'>
+        <%= render 'form' %>
+    </div>
+</div>
 
 
 <br> 
@@ -72,7 +78,7 @@ This is for filtering
 <br>
 
 <div style="background-color:#ffd000">
-    <a class="btn-floating btn-large waves-effect waves-light red" style="float:right; margin-right:26px"><i class="material-icons">+</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light red" style="float:right; margin-right:26px"><i class="material-icons formicon">+</i></a>
 </div>
 </div>
 
@@ -106,6 +112,29 @@ This is for filtering
         name += "\n "+address
        
         alert(name)
+    })
+
+    $('.formicon').click(function(){
+        $('#in').toggle()
+    })
+
+    $('#additional').hide()
+
+    $('.info').mouseover(function(){
+        var name = $(this).siblings('div').children('p')[0].innerHTML
+        var address =  $(this).siblings('div').children('p')[1].innerHTML
+        name += "\n "+address
+        
+        $('#additional').slideDown(function(){
+           $('#additional').append(name) 
+        })
+
+        .mouseout(function(){
+            $('#additional').hide()
+            $('#additional').empty()
+
+        }) 
+
     })
 
 
