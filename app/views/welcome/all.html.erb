@@ -1,4 +1,5 @@
 <div class="full-page" style="background-color:#ffd000">
+
     <div class="row">
         <div class="col s4" >
             <a href="/"><img src="../assets/eatwitheyes_y.png" style="height:110px; margin-left:18px;"></a> 
@@ -8,7 +9,7 @@
             </div>
         </div>            
         <div class="col s4">
-            <div class="fixed-action-btn horizontal" style="top: 25px; right: 24px;">
+            <div class="fixed-action-btn horizontal" style="top: 25px; right: 24px;height: 50px;">
                 <a class="btn-floating btn-large red">
                   <i class="large material-icons">?</i>
                 </a>
@@ -20,7 +21,9 @@
                   <li><a class="btn-floating reset" style="background-color:#df5496"><i class="material-icons">X</i></a></li>      
                 </ul>
             </div>
-        </div>    
+        </div> 
+
+          
     </div>          
 
 <div class="gridster" style="margin:4%;">
@@ -47,18 +50,29 @@
 </div>
 <br>
 <br>
+<div id='outterbutton'>
+    <div id='innerbutton'>
+        <div style="background-color:#ffd000">
+             <a class="btn-floating btn-large waves-effect waves-light red" style="float:right; margin-right:26px"><i class="material-icons formicon">+</i></a>
+        </div>
+    </div>
+</div>
 <br>
 <br>
 <br>
 <br>
 
+<div id='out'>
 
-<%= render 'form' %>
+    <div id='in'>
 
+        <%= render 'form' %>
+    </div>
+</div>
 
 
 <br> 
-This is for filtering
+
 
 <% name_array = [] %>
 
@@ -81,9 +95,7 @@ This is for filtering
 
 <br>
 
-<div style="background-color:#ffd000">
-    <a class="btn-floating btn-large waves-effect waves-light red" style="float:right; margin-right:26px"><i class="material-icons">+</i></a>
-</div>
+
 </div>
 </div>
 <script>
@@ -117,6 +129,14 @@ This is for filtering
        
         alert(name)
     })
+    $('#in').hide()
+
+    $('.formicon').click(function(){
+        $('#in').toggle()
+    })
+
+    $('#additional').hide()
+
 
 
 
