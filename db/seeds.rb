@@ -9,6 +9,7 @@ Picture.delete_all
 File.open("#{Rails.root}/public/seed_data/yum_seed_semi.csv") do |row|
 	row.read.each_line do |line|
 		image, type, restaurant_name, address = line.chomp.split(";")
-		Picture.create!(:image_file_name => image.gsub("/assets/","assets/"), :name => type, :restaurant => restaurant_name, :address => address)
+		image = image.gsub("/assets/","")
+		Picture.create!(:image => File.new("#{Rails.root}/app/assets/images/#{image}"), :name => type, :restaurant => restaurant_name, :address => address)
 	end
 end
