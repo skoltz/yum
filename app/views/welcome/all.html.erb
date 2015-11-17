@@ -1,79 +1,18 @@
-This is for filtering
+<div class="full-page" style="background-color:#ffd000">
+    <div class="fixed-action-btn horizontal" style="top: 25px; right: 24px;">
+        <a class="btn-floating btn-large red">
+          <i class="large material-icons">?</i>
+        </a>
+        <ul>
+          <li><a class="btn-floating red filter" id="pizza" style="background: url('../assets/HungryEyesNY-Pizza.jpg') center no-repeat; background-size: cover;"><i class="material-icons"></i></a></li>
+          <li><a class="btn-floating yellow darken-1 filter" id="burger" style="background: url('../assets/eyes-burger.jpeg') center no-repeat; background-size: cover;"><i class="material-icons"><i class="material-icons"></i></a></li>
+          <li><a class="btn-floating green filter" id="donut" style="background: url('../assets/eyes-donut.jpeg') center no-repeat; background-size: cover;"><i class="material-icons"><i class="material-icons"></i></a></li>
+          <li><a class="btn-floating blue filter" id="icecream" style="background: url('../assets/eyes-icecream') center no-repeat; background-size: cover;"><i class="material-icons"></i></a></li>
+          <li><a class="btn-floating reset" style="background-color:#df5496"><i class="material-icons">X</i></a></li>          
+        </ul>
+    </div>
+<a href="/"><img src="../assets/eatwitheyes_y.png" style="height:110px; margin-left:18px;"></a>        
 
-<% name_array = [] %>
-
-<%@pic.each do |pics|%>
-
-<% name_array << pics.name %>
-<%end%>
-
-<table>
-<tr>
-<%name_array.uniq.each do |name|%>
-
-<td><p class='filter' id="<%=name%>"><%=name%></p></td>
-
-<%end%>
-<td><p class='reset'> clear </p></td>
-<td><p class="nofilter"> show/hide</p></td>
-</tr>
-</table>
-
-
-
-
-THIS IS A LIST OF ALL THE PICTURES
-<br>
-<%= image_tag("eatwitheyes_yellow.png", :style => "height: 320px") %> 
-<br>
-<div class="container">
-	<div class="row">
-		<div class="col s4">
-			<h2> oh hey </h2>
-		</div>	
-		<div class="col s4">
-			<h2> oh hey </h2>
-		</div>			
-		<div class="col s4">
-			<h2> oh hey </h2>
-		</div>	
-	</div>
-</div>		
-<br>
-<br>
-<br>
-
-<%@pic.each do |pics|%>
-Food: <%= pics.name %>
-
-
-<br>
-Restaurant: <%= pics.restaurant %>
-hello
-Address: <%= pics.address %>
-<br>
-<%= image_tag pics.image.url(:medium) %>
-
-<br>
-<br>
-<br>
-
-<% end %>
-
-<br>
-<br>
-<br>
-
-<%= form_tag("/", method: "get") do %>
-  <%= submit_tag("home page") %>
-<%end%>
-
-<h1>New Picture</h1>
-
-<%= render 'form' %>
-
-<h2> something</h2>
-<br>
 <div class="gridster">
     <ul>
         <% i = 1 %> 
@@ -82,7 +21,7 @@ Address: <%= pics.address %>
         <%@pic.each_slice(3) do |pics| %>
             <%pics.each do |p| %>
 
-            <li class="gridster-cell <%=p.name%>" data-row="<%=k+1%>" data-col="<%=i%>" data-sizex="<%=z.sample%>" data-sizey="<%=z.sample%>" style="background: url(<%=p.image.url(:medium)%>) center no-repeat; background-size: cover;"> <p class='info'>info</p>
+            <li class="gridster-cell <%=p.name%>" data-row="<%=k+1%>" data-col="<%=i%>" data-sizex="<%=z.sample%>" data-sizey="<%=z.sample%>" style="background: url(<%=p.image.url(:medium)%>) center no-repeat; border: solid 3px white; background-size: cover;"> <p class='info' style="color:white;">info</p>
                 <div id='<%=p.id%>'style="display:none">
                     <p><%=p.restaurant%></p>
                     <p><%=p.address%></p>
@@ -104,25 +43,37 @@ Address: <%= pics.address %>
 <br>
 
 
-<div class="gridster">
-    <ul>
-        <li class="gridster-cell" data-row="1" data-col="1" data-sizex="1" data-sizey="1" resize.enabled:true>Block1</li>
-        <li class="gridster-cell" data-row="2" data-col="1" data-sizex="1" data-sizey="1">Block2</li>
-        <li class="gridster-cell" data-row="3" data-col="1" data-sizex="1" data-sizey="1">Block3</li>
+<%= render 'form' %>
 
-        <li class="gridster-cell" data-row="1" data-col="2" data-sizex="2" data-sizey="1">Block4</li>
-        <li class="gridster-cell" data-row="2" data-col="2" data-sizex="2" data-sizey="2">Block5</li>
 
-        <li class="gridster-cell" data-row="1" data-col="4" data-sizex="1" data-sizey="1">Block6</li>
-        <li class="gridster-cell" data-row="2" data-col="4" data-sizex="2" data-sizey="1">Block7</li>
-        <li class="gridster-cell" data-row="3" data-col="4" data-sizex="1" data-sizey="1">Block8</li>
 
-        <li class="gridster-cell" data-row="1" data-col="5" data-sizex="1" data-sizey="1">Block9</li>
-        <li class="gridster-cell" data-row="3" data-col="5" data-sizex="1" data-sizey="1">Block10</li>
+<br> 
+This is for filtering
 
-        <li class="gridster-cell" data-row="1" data-col="6" data-sizex="1" data-sizey="1">Block11</li>
-        <li class="gridster-cell" data-row="2" data-col="6" data-sizex="1" data-sizey="2">Block12</li>
-    </ul>
+<% name_array = [] %>
+
+<%@pic.each do |pics|%>
+
+<% name_array << pics.name %>
+<%end%>
+
+<table>
+<tr>
+<%name_array.uniq.each do |name|%>
+
+<td><p class='filter' id="<%=name%>"><%=name%></p></td>
+
+<%end%>
+<td><p class='reset'> clear </p></td>
+<td><p class="nofilter"> show/hide</p></td>
+</tr>
+</table>
+
+<br>
+
+<div style="background-color:#ffd000">
+    <a class="btn-floating btn-large waves-effect waves-light red" style="float:right; margin-right:26px"><i class="material-icons">+</i></a>
+</div>
 </div>
 
 <script>
