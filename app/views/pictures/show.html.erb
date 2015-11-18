@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+
+<%= @picture.name %>
+<%= @picture.restaurant %>
+<%= @picture.address %>
+<%= image_tag @picture.image.url(:medium) %>
+
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>
+
+<%= form_tag("/", method: "get") do %>
+  <%= submit_tag("home page") %>
+<%end%>

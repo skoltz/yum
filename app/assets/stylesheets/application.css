@@ -10,6 +10,27 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require jquery.gridster.min.css
+
  *= require_tree .
  *= require_self
- */
+*/
+
+
+#out {
+  width: 100%;
+  text-align: center;
+}
+
+#in {
+  display: inline-block;
+}
+
+#outterbutton {
+  width: 100%;
+  text-align: center;
+}
+
+#innerbutton {
+  display: inline-block;
+}
