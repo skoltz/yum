@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   resources :pictures
-  resources :types
-  resources :restaurants
-  resources :users
-  root to: 'welcome#welcome'
+  root to: 'welcome#all'
   get 'welcome/all' => 'welcome#all'
   post 'welcome/all' => 'welcome#all'
   get 'welcome/welcome' => 'welcome#welcome'
