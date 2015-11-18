@@ -99,12 +99,26 @@
 </div>
 </div>
 <script>
+
+    $('#in').hide()
+    $('#additional').hide()
+
+
+
+// shows selected filter image
     $('.filter').click(function(){
         var imageClass = this.id
             $('.gridster-cell').hide()
             $('.'+imageClass).show()
     });
 
+// resets all images on the grid
+
+    $('.reset').click(function(){
+        $('.gridster-cell').show()
+    })
+
+// show/hide the options on the buttom of the page 
     $('.nofilter').click(function(){
         if ($('.filter').is(":visible")){
             $('.filter').hide()
@@ -116,10 +130,7 @@
         }
     });
 
-    $('.reset').click(function(){
-        $('.gridster-cell').show()
-    })
-
+// takes information from each image and alerts the user on click
     $('.info').click(function(){
         
         var name = $(this).siblings('div').children('p')[0].innerHTML
@@ -129,13 +140,13 @@
        
         alert(name)
     })
-    $('#in').hide()
 
+
+// toggle show/hide the form
     $('.formicon').click(function(){
         $('#in').toggle()
     })
-
-    $('#additional').hide()
+    
 
 
 
