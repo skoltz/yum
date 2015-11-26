@@ -1,18 +1,19 @@
-== Application built for Flatiron Presents
-This application was inspired by an insterest to understand and expand our knowledge on front end development.
+== Application built for Flatiron Presents Meetup
+This application was inspired by an interest to expand our knowledge of front end development. Utilizes the Gridster jQuery library to implement dragable, resizable tiles. 
+
+Presentation slides: https://docs.google.com/presentation/d/1zn1ZzECdM238J9_5dmShCJluPH7UJiLjiTU4YTzUJhE/edit?usp=sharing 
 
 Setup -
-	Git clone
-	Bundle Install
-	Rake db:migrate
-	Rake db:seed (to populate DB inorder to best interact with the application)
+	Git clone,
+	Bundle install,
+	Rake db:migrate,
+	Rake db:seed (to populate the DB and demo the application)
 
 Known Issues/Future updates —
 
-Currently no validation on our form. 
+Currently no form validation.
 Ajax to submit form to the proper endpoint.
 Implement a rating system.
-Offer a hide/feature for pictures a user does not wish to see while on the page.
+Offer a show/hide feature for pictures that a user does not wish to see.
 
-Feel free to give me feedback! 
-I want to improve and continue writing the best possible code!
+Feel free to give us feedback!
